@@ -18,18 +18,27 @@ export default function Gallery() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section gallery-section">
         <div className="container">
           <div className="masonry">
             {GALLERY.map((g, i) => (
               <motion.div
                 key={g.label}
-                className={`m-item ${g.tall ? "tall" : ""}`}
+                className={`m-item ${g.label === "Smart TV" ? "m-item-tv" : ""}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: (i % 4) * 0.07, duration: 0.5 }}
                 onClick={() => setSel(g)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    setSel(g);
+                  }
+                }}
+                role="button"
+                tabIndex={0}
+                aria-label={`View ${g.label}`}
               >
                 <Img src={g.img} alt={g.label} />
                 <div className="m-cap">{g.label}</div>

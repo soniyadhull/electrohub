@@ -1,8 +1,10 @@
 node_modules/
 dist/
 server/messages.json
+server/orders.json
 .env
 .env.*
+!.env.example
 *.log
 .DS_Store
 Thumbs.db

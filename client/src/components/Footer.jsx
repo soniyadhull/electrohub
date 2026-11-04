@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { SHOP } from "../data.js";
+import { SHOP, WHATSAPP_MESSAGE } from "../data.js";
 
 export default function Footer() {
   return (
@@ -20,7 +20,10 @@ export default function Footer() {
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/gallery">Gallery</Link>
+          <Link to="/products">Products</Link>
           <Link to="/contact">Contact</Link>
+          <Link to="/privacy">Privacy Policy</Link>
+          <Link to="/terms">Terms & Conditions</Link>
         </div>
 
         <div>
@@ -28,7 +31,7 @@ export default function Footer() {
           <p className="muted">📍 {SHOP.address}</p>
           <p className="muted">🕘 {SHOP.hours}</p>
           <a href={`tel:${SHOP.phone}`}>📞 {SHOP.phone}</a>
-          <a href={`https://wa.me/${SHOP.wa}`} target="_blank" rel="noreferrer">
+          <a href={`https://wa.me/${SHOP.wa}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`} target="_blank" rel="noreferrer">
             💬 WhatsApp
           </a>
         </div>
@@ -36,6 +39,14 @@ export default function Footer() {
 
       <div className="copy">
         © {new Date().getFullYear()} <b>ElectroHub</b>, Narwana, Jind. All rights reserved.
+        <a
+          className="photo-credit"
+          href="https://commons.wikimedia.org/wiki/File:OnePlus_TV_U1S.jpg"
+          target="_blank"
+          rel="noreferrer"
+        >
+          TV photo: PhotoPicker13 / Wikimedia Commons (CC BY-SA 4.0)
+        </a>
       </div>
     </footer>
   );

@@ -8,6 +8,12 @@ import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Gallery from "./pages/Gallery.jsx";
 import Contact from "./pages/Contact.jsx";
+import Products from "./pages/Products.jsx";
+import Checkout from "./pages/Checkout.jsx";
+import TrackOrder from "./pages/TrackOrder.jsx";
+import Privacy from "./pages/Privacy.jsx";
+import Terms from "./pages/Terms.jsx";
+import OrderAdmin from "./pages/OrderAdmin.jsx";
 
 export default function App() {
   const location = useLocation();
@@ -29,7 +35,13 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/products" element={<Products />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/track-order" element={<TrackOrder />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/admin/orders" element={<OrderAdmin />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </motion.main>

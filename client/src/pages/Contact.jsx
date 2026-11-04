@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Reveal from "../components/Reveal.jsx";
-import { SHOP } from "../data.js";
+import { SHOP, WHATSAPP_MESSAGE } from "../data.js";
 
 const empty = { name: "", phone: "", message: "" };
 
@@ -46,7 +46,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section contact-section">
         <div className="container contact-grid">
           <Reveal x={-50} y={0}>
             <div className="info">
@@ -68,19 +68,29 @@ export default function Contact() {
                 <span className="info-ico">💬</span>
                 <div>
                   <h4>WhatsApp</h4>
-                  <a href={`https://wa.me/${SHOP.wa}`} target="_blank" rel="noreferrer">
+                  <a href={`https://wa.me/${SHOP.wa}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`} target="_blank" rel="noreferrer">
                     Chat karein
                   </a>
                 </div>
               </div>
-              <div className="info-i">
-                <span className="info-ico">🕘</span>
-                <div>
-                  <h4>Timing</h4>
-                  <p>Roz {SHOP.hours}</p>
-                </div>
-              </div>
-              <iframe title="ElectroHub location" src={SHOP.map} loading="lazy" className="map" />
+               <div className="info-i">
+                 <span className="info-ico">🕘</span>
+                 <div>
+                   <h4>Timing</h4>
+                   <p>Roz {SHOP.hours}</p>
+                 </div>
+               </div>
+               <div className="info-i">
+                 <span className="info-ico">🌐</span>
+                 <div>
+                   <h4>Social Media</h4>
+                   <div style={{ display: "flex", gap: 12, marginTop: 6 }}>
+                     <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">📘 Facebook</a>
+                     <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">📸 Instagram</a>
+                     <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube">▶️ YouTube</a>
+                   </div>
+                 </div>
+               </div>
             </div>
           </Reveal>
 

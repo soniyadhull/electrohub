@@ -8,19 +8,32 @@ export const SHOP = {
   map: "https://www.google.com/maps?q=Chamela+Colony,+Narwana,+Jind,+Haryana&output=embed",
 };
 
-const u = (id, w = 900) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
+export const WHATSAPP_MESSAGE = "नमस्ते! Product details बताएं।\nHi! Please share product details.";
+
+const u = (name) => `/images/${name}.webp`;
 
 export const IMG = {
-  hero: u("photo-1550009158-9ebf69173e03", 1500),
-  store: u("photo-1498049794561-7780e7231661", 1100),
-  phone: u("photo-1511707171634-5f897ff02aa9"),
-  tv: u("photo-1593784991095-a205069470b6"),
-  laptop: u("photo-1517336714731-489689fd1ca8"),
-  audio: u("photo-1583394838336-acd977736f90"),
-  watch: u("photo-1546868871-7041f2a55e12"),
-  gadget: u("photo-1572569511254-d8f925fe2cbb"),
-  circuit: u("photo-1518770660439-4636190af475"),
+  hero: u("hero"),
+  store: u("store"),
+  phone: u("phone"),
+  tv: "/images/tv-product.svg",
+  laptop: u("laptop"),
+  audio: u("audio"),
+  watch: u("watch"),
+  gadget: u("gadget"),
+  circuit: u("circuit"),
 };
+
+export const PRODUCTS_PRICE_CHECKED = "29 Oct 2026";
+export const PRODUCTS_SOURCE = "https://www.samsung.com/in/smartphones/galaxy-s26/buy/";
+export const PRODUCTS = [
+  { id: "samsung-galaxy-s26-fe", name: "Samsung Galaxy S26 FE", category: "Smartphone", price: 79999, mrp: 109999, image: IMG.phone },
+  { id: "samsung-galaxy-s26", name: "Samsung Galaxy S26", category: "Smartphone", price: 102999, mrp: 117999, image: IMG.phone },
+  { id: "samsung-galaxy-s26-plus", name: "Samsung Galaxy S26+", category: "Smartphone", price: 134999, mrp: 149999, image: IMG.phone },
+  { id: "samsung-headphones", name: "Samsung Headphones", category: "Audio", price: 4999, mrp: 6999, image: IMG.audio },
+  { id: "samsung-smart-tv", name: "Samsung Smart TV 43\"", category: "Smart TV", price: 32999, mrp: 42999, image: IMG.tv },
+  { id: "samsung-laptop", name: "Samsung Galaxy Book", category: "Laptop", price: 64999, mrp: 79999, image: IMG.laptop },
+];
 
 export const STATS = [
   { n: 5000, s: "+", label: "Happy Customers" },

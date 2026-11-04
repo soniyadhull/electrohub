@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Menu, Phone, X } from "lucide-react";
 import { SHOP } from "../data.js";
 
 const links = [
   ["/", "Home"],
+  ["/products", "Products"],
   ["/about", "About"],
   ["/gallery", "Gallery"],
   ["/contact", "Contact"],
+  ["/track-order", "Track Order"],
 ];
 
 export default function Navbar() {
@@ -21,7 +24,7 @@ export default function Navbar() {
           Electro<span className="logo-accent">Hub</span>
         </Link>
 
-        <nav className={`nav-links ${open ? "open" : ""}`}>
+        <nav id="primary-navigation" className={`nav-links ${open ? "open" : ""}`}>
           {links.map(([to, label]) => (
             <NavLink
               key={to}
@@ -34,12 +37,21 @@ export default function Navbar() {
             </NavLink>
           ))}
           <a className="btn btn-amber btn-sm" href={`tel:${SHOP.phone}`}>
-            📞 Call Now
+            <Phone size={16} aria-hidden="true" /> Call Now
           </a>
         </nav>
 
-        <button className="burger" aria-label="Toggle menu" onClick={() => setOpen((v) => !v)}>
-          {open ? "✕" : "☰"}
+        {open && <button className="nav-backdrop" aria-label="Close navigation menu" onClick={() => setOpen(false)} />}
+
+        <button
+          className="burger"
+          type="button"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          aria-controls="primary-navigation"
+          onClick={() => setOpen((value) => !value)}
+        >
+          {open ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
         </button>
       </div>
     </motion.header>

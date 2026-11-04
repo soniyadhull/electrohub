@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Reveal from "../components/Reveal.jsx";
 import Img from "../components/Img.jsx";
 import { IMG } from "../data.js";
@@ -29,10 +30,12 @@ export default function About() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section about-story-section">
         <div className="container two">
           <Reveal x={-60} y={0}>
-            <Img className="about-img" src={IMG.store} alt="ElectroHub store" />
+            <motion.div animate={{ y: [0, -12, 0] }} transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}>
+              <Img className="about-img" src={IMG.store} alt="ElectroHub store" />
+            </motion.div>
           </Reveal>
           <Reveal x={60} y={0}>
             <span className="eyebrow">Hamari Kahani</span>
@@ -40,12 +43,22 @@ export default function About() {
               Hum <span className="grad">kaun hain?</span>
             </h2>
             <p className="text">
-              ElectroHub, Narwana (Jind) ki ek bharosemand electronics shop hai. Hamara maqsad hai ki aapko latest
-              electronics original quality aur sahi daam par mile.
+              ElectroHub, Narwana (Jind, Haryana) ki ek bharosemand electronics shop hai. 2016 se chal rahi
+              humari dukaan ka ek hi maqsad hai — aapko latest electronics original quality aur sahi daam par
+              milen, bina kisi jhanjhat ke.
             </p>
             <p className="text">
-              Mobile aur TV se lekar laptop, audio aur accessories tak, sab kuch ek hi chhat ke neeche milta hai.
-              Khareedne ke baad bhi hum aapke saath hain — repair, exchange aur support ke liye.
+              Mobile aur TV se lekar laptop, audio aur accessories tak, sab kuch ek hi chhat ke neeche milta
+              hai. Har product par GST bill, brand warranty aur genuine accessories — no fake, no compromise.
+            </p>
+            <p className="text">
+              Khareedne ke baad bhi hum aapke saath hain: free installation, repair, exchange offer, no-cost
+              EMI aur doorstep support. Humara staff trained aur friendly hai jo aapko sahi product choose
+              karne mein madad karta hai.
+            </p>
+            <p className="text">
+              Aaj tak 10,000+ customers ka bharosa jeeta hai humne. Aapka bharosa hi hamari sabse badi
+              kamayi hai.
             </p>
             <ul className="ticks">
               {points.map((p) => (
@@ -59,7 +72,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="section alt">
+      <section className="section alt about-values-section">
         <div className="container">
           <Reveal>
             <div className="section-head">
