@@ -42,7 +42,7 @@ export function createApp({
 } = {}) {
   let writeQueue = Promise.resolve();
   const app = express();
-  app.use(cors());
+  app.use(cors({ origin: process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.split(",") : true }));
   app.use(express.json({ limit: "32kb" }));
 
   const readOrders = async () => {

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { PRODUCTS } from "../data.js";
+import { API } from "../api.js";
 
 const EMPTY_CONFIG = {
   deliveryArea: "Haryana",
@@ -47,7 +48,7 @@ export default function Checkout() {
 
   useEffect(() => {
     let active = true;
-    fetch("/api/store-config")
+    fetch(`${API}/api/store-config`)
       .then(async (response) => {
         if (!response.ok) throw new Error("Delivery and payment settings could not be loaded.");
         return response.json();
@@ -87,7 +88,7 @@ export default function Checkout() {
     setBusy(true);
     setError("");
     try {
-      const verification = await fetch(`/api/orders/${trackingId}/verify-payment`, {
+      const verification = await fetch(`${API}/api/orders/${trackingId}/verify-payment`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payment),
@@ -116,7 +117,7 @@ export default function Checkout() {
 
       let result = paymentSession;
       if (!result) {
-        const response = await fetch("/api/orders", {
+        const response = await fetch(`${API}/api/orders`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Reveal from "../components/Reveal.jsx";
 import { SHOP, WHATSAPP_MESSAGE } from "../data.js";
+import { API } from "../api.js";
 
 const empty = { name: "", phone: "", message: "" };
 
@@ -16,7 +17,7 @@ export default function Contact() {
     setBusy(true);
     setStatus({ type: "", msg: "" });
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch(`${API}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

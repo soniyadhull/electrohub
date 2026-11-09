@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { API } from "../api.js";
 
 const STATUSES = [
   ["confirmed", "Confirmed"],
@@ -16,7 +17,7 @@ export default function OrderAdmin() {
   const [busy, setBusy] = useState(false);
 
   const request = async (url, options = {}) => {
-    const response = await fetch(url, {
+    const response = await fetch(`${API}${url}`, {
       ...options,
       headers: { ...options.headers, Authorization: `Bearer ${key}` },
     });

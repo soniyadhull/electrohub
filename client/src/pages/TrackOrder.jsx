@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import { API } from "../api.js";
 
 const formatPrice = (price) => new Intl.NumberFormat("en-IN", {
   style: "currency",
@@ -20,7 +21,7 @@ export default function TrackOrder() {
     setError("");
     setOrder(null);
     try {
-      const response = await fetch(`/api/orders/${encodeURIComponent(trackingId.trim())}`);
+      const response = await fetch(`${API}/api/orders/${encodeURIComponent(trackingId.trim())}`);
       const result = await response.json();
       if (!response.ok) throw new Error(result.error || "Order could not be found.");
       setOrder(result.order);
