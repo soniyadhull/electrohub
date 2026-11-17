@@ -39,11 +39,11 @@ export default function Contact() {
     <>
       <section className="page-hero">
         <div className="container">
-          <span className="eyebrow">Get in Touch</span>
-          <h1>
-            Contact <span className="grad">Us</span>
-          </h1>
-          <p>Price, stock ya repair ke liye humse poochein</p>
+<span className="eyebrow">Get in Touch</span>
+            <h1>
+              Contact <span className="grad">Us</span> – Electronics Shop Narwana, Jind
+            </h1>
+            <p>Price, stock ya repair ke liye humse poochein</p>
         </div>
       </section>
 
@@ -54,21 +54,21 @@ export default function Contact() {
               <div className="info-i">
                 <span className="info-ico">📍</span>
                 <div>
-                  <h4>Address</h4>
+                  <h2>Address</h2>
                   <p>{SHOP.address}</p>
                 </div>
               </div>
               <div className="info-i">
                 <span className="info-ico">📞</span>
                 <div>
-                  <h4>Phone</h4>
+                  <h2>Phone</h2>
                   <a href={`tel:${SHOP.phone}`}>{SHOP.phone}</a>
                 </div>
               </div>
               <div className="info-i">
                 <span className="info-ico">💬</span>
                 <div>
-                  <h4>WhatsApp</h4>
+                  <h2>WhatsApp</h2>
                   <a href={`https://wa.me/${SHOP.wa}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`} target="_blank" rel="noreferrer">
                     Chat karein
                   </a>
@@ -77,14 +77,14 @@ export default function Contact() {
                <div className="info-i">
                  <span className="info-ico">🕘</span>
                  <div>
-                   <h4>Timing</h4>
+                   <h2>Timing</h2>
                    <p>Roz {SHOP.hours}</p>
                  </div>
                </div>
                <div className="info-i">
                  <span className="info-ico">🌐</span>
                  <div>
-                   <h4>Social Media</h4>
+                   <h2>Social Media</h2>
                    <div style={{ display: "flex", gap: 12, marginTop: 6 }}>
                      <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">📘 Facebook</a>
                      <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">📸 Instagram</a>
@@ -97,7 +97,7 @@ export default function Contact() {
 
           <Reveal x={50} y={0}>
             <form className="form" onSubmit={submit}>
-              <h3>Enquiry bhejein</h3>
+              <h2>Enquiry bhejein</h2>
               <label>
                 Aapka naam
                 <input name="name" placeholder="Poora naam likhein" value={form.name} onChange={change} required />
@@ -131,6 +131,24 @@ export default function Contact() {
               {status.msg && <p className={`status ${status.type}`}>{status.msg}</p>}
             </form>
           </Reveal>
+
+          <div style={{ marginTop: 40 }}>
+            <h3 style={{ marginBottom: 20 }}>Common Questions</h3>
+            <div style={{ display: "grid", gap: 12 }}>
+              <div style={{ padding: "16px 18px", background: "var(--card)", border: "1px solid var(--line)", borderRadius: "14px" }}>
+                <h4 style={{ marginBottom: 4 }}>What is the shop timing?</h4>
+                <p className="muted" style={{ fontSize: 14, lineHeight: 1.6 }}>ElectroHub is open daily from {SHOP.hours} at Chamela Colony, Narwana, Jind, Haryana.</p>
+              </div>
+              <div style={{ padding: "16px 18px", background: "var(--card)", border: "1px solid var(--line)", borderRadius: "14px" }}>
+                <h4 style={{ marginBottom: 4 }}>Do you deliver outside Narwana?</h4>
+                <p className="muted" style={{ fontSize: 14, lineHeight: 1.6 }}>We deliver across Haryana including Jind and nearby areas. Call or WhatsApp to confirm delivery to your location.</p>
+              </div>
+              <div style={{ padding: "16px 18px", background: "var(--card)", border: "1px solid var(--line)", borderRadius: "14px" }}>
+                <h4 style={{ marginBottom: 4 }}>Can I check product price before visiting?</h4>
+                <p className="muted" style={{ fontSize: 14, lineHeight: 1.6 }}>Yes. Call {SHOP.phone} or message us on WhatsApp. Our staff will confirm the current price and stock instantly.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </>

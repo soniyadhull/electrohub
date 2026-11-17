@@ -66,6 +66,7 @@ export default function OrderAdmin() {
       </section>
       <section className="section admin-section">
         <div className="container admin-layout">
+          <h2 className="section-head">Manage Orders</h2>
           <form className="form admin-login" onSubmit={loadOrders}>
             <label>
               Server admin key

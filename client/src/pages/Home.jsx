@@ -16,7 +16,7 @@ export default function Home() {
     <>
       <section className="hero">
         <div className="hero-bg">
-          <Img src={IMG.hero} alt="Electronics store" />
+          <Img src={IMG.hero} alt="Electronics shop in Narwana, Jind – ElectroHub store interior" priority />
         </div>
         <div className="blob b1" />
         <div className="blob b2" />
@@ -65,7 +65,7 @@ export default function Home() {
               animate={{ y: [0, -12, 0], rotate: [0, 1, 0] }}
               transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
             >
-              <Img src={IMG.phone} alt="Latest smartphone" />
+              <Img src={IMG.phone} alt="Samsung Galaxy S26 smartphone – latest mobile price in Narwana" />
               <span>Smartphones</span>
             </motion.div>
             <motion.div
@@ -73,7 +73,7 @@ export default function Home() {
               animate={{ y: [0, 10, 0], rotate: [0, -2, 0] }}
               transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
             >
-              <Img src={IMG.audio} alt="Headphones and audio products" />
+              <Img src={IMG.audio} alt="Samsung Galaxy Buds FE and audio headphones – best price Narwana" />
               <span>Headphones</span>
             </motion.div>
             <motion.div
@@ -81,7 +81,7 @@ export default function Home() {
               animate={{ y: [0, -9, 0], rotate: [0, 1, 0] }}
               transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut" }}
             >
-              <Img className="hero-tv-image" src={IMG.tv} alt="Smart television" />
+              <Img className="hero-tv-image" src={IMG.tv} alt="Samsung Smart TV 43 inch – best price in Narwana" />
               <span>Smart TVs</span>
             </motion.div>
             <span className="tag t1">⭐ Top Brands</span>
@@ -111,7 +111,7 @@ export default function Home() {
               <h2 className="title">
                 Best <span className="grad">Sellers</span>
               </h2>
-              <p className="sub">Popular smartphones, genuine products aur brand warranty ke saath</p>
+              <p className="sub">Popular smartphones, genuine products aur brand warranty ke saath — <Link to="/products" style={{ color: "var(--primary)" }}>view full products list →</Link></p>
             </div>
           </Reveal>
           <div className="best-seller-grid">
@@ -119,7 +119,7 @@ export default function Home() {
               <Reveal key={product.name} delay={index * 0.08}>
                 <article className="best-seller-card">
                   <div className="best-seller-image-wrap">
-                    <Img className="best-seller-image" src={product.image} alt={product.name} />
+                    <Img className="best-seller-image" src={product.image} alt={`${product.name} – ${product.category} at best price in Narwana`} />
                     <span className="best-seller-badge">Popular pick</span>
                   </div>
                   <div className="best-seller-info">
@@ -182,14 +182,14 @@ export default function Home() {
               <h2 className="title">
                 Hamari <span className="grad">Categories</span>
               </h2>
-              <p className="sub">Jo chahiye, sab ek hi jagah</p>
+              <p className="sub">Jo chahiye, sab ek hi jagah — <Link to="/products" style={{ color: "var(--primary)" }}>browse all products →</Link></p>
             </div>
           </Reveal>
           <div className="grid3">
             {CATEGORIES.map((c, i) => (
               <Reveal key={c.title} delay={i * 0.07}>
                 <div className="cat-card">
-                  <Img className={`cat-img ${c.title === "Smart TVs" ? "cat-img-tv" : ""}`} src={c.img} alt={c.title} />
+                  <Img className={`cat-img ${c.title === "Smart TVs" ? "cat-img-tv" : ""}`} src={c.img} alt={`${c.title} – ${c.text} at ElectroHub Narwana`} />
                   <div className="cat-body">
                     <div className="cat-title-row">
                       <span className="cat-ico">{c.icon}</span>

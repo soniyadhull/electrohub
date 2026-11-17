@@ -27,12 +27,12 @@ export const IMG = {
 export const PRODUCTS_PRICE_CHECKED = "29 Oct 2026";
 export const PRODUCTS_SOURCE = "https://www.samsung.com/in/smartphones/galaxy-s26/buy/";
 export const PRODUCTS = [
-  { id: "samsung-galaxy-s26-fe", name: "Samsung Galaxy S26 FE", category: "Smartphone", price: 79999, mrp: 109999, image: IMG.phone },
-  { id: "samsung-galaxy-s26", name: "Samsung Galaxy S26", category: "Smartphone", price: 102999, mrp: 117999, image: IMG.phone },
-  { id: "samsung-galaxy-s26-plus", name: "Samsung Galaxy S26+", category: "Smartphone", price: 134999, mrp: 149999, image: IMG.phone },
-  { id: "samsung-headphones", name: "Samsung Headphones", category: "Audio", price: 4999, mrp: 6999, image: IMG.audio },
-  { id: "samsung-smart-tv", name: "Samsung Smart TV 43\"", category: "Smart TV", price: 32999, mrp: 42999, image: IMG.tv },
-  { id: "samsung-laptop", name: "Samsung Galaxy Book", category: "Laptop", price: 64999, mrp: 79999, image: IMG.laptop },
+  { id: "samsung-galaxy-s26-fe", name: "Samsung Galaxy S26 FE", category: "Smartphone", price: 79999, mrp: 109999, image: IMG.phone, desc: "Samsung Galaxy S26 FE brings flagship-level design, a smooth 120Hz display and a versatile triple camera setup at an accessible price. Ideal for daily use, photography and long hours of streaming." },
+  { id: "samsung-galaxy-s26", name: "Samsung Galaxy S26", category: "Smartphone", price: 102999, mrp: 117999, image: IMG.phone, desc: "The Samsung Galaxy S26 delivers top-tier performance with a powerful processor, bright AMOLED display and pro-grade cameras. Perfect for power users who want speed, clarity and premium design." },
+  { id: "samsung-galaxy-s26-plus", name: "Samsung Galaxy S26+", category: "Smartphone", price: 134999, mrp: 149999, image: IMG.phone, desc: "Samsung Galaxy S26 Plus offers a larger, stunning display, an upgraded camera system and an even bigger battery. Built for those who want a big-screen phone without compromise." },
+  { id: "samsung-headphones", name: "Samsung Headphones", category: "Audio", price: 4999, mrp: 6999, image: IMG.audio, desc: "Samsung Headphones deliver clear, balanced sound for music, calls and videos. Comfortable fit and reliable build make them a great everyday companion for work and travel." },
+  { id: "samsung-smart-tv", name: "Samsung Smart TV 43\"", category: "Smart TV", price: 32999, mrp: 42999, image: IMG.tv, desc: "Samsung Smart TV 43 inch brings crisp 4K picture, smooth motion and smart apps to your living room. Easy to set up and great for streaming, gaming and sports." },
+  { id: "samsung-laptop", name: "Samsung Galaxy Book", category: "Laptop", price: 64999, mrp: 79999, image: IMG.laptop, desc: "Samsung Galaxy Book is a slim, lightweight laptop built for study, office work and everyday browsing. Long battery life and a clean keyboard make it a dependable choice for students and professionals." },
 ];
 
 export const STATS = [
@@ -49,12 +49,12 @@ export const OFFERS = [
 ];
 
 export const CATEGORIES = [
-  { icon: "📱", title: "Mobiles", text: "Latest smartphones, har budget mein", img: IMG.phone },
-  { icon: "📺", title: "Smart TVs", text: "4K LED / Smart TV, best price", img: IMG.tv },
-  { icon: "💻", title: "Laptops", text: "Study, office aur gaming laptops", img: IMG.laptop },
-  { icon: "🎧", title: "Audio", text: "Headphones, speakers, soundbars", img: IMG.audio },
-  { icon: "⌚", title: "Smart Watches", text: "Fitness aur style, dono ek mein", img: IMG.watch },
-  { icon: "🔌", title: "Accessories", text: "Chargers, cables, covers, power banks", img: IMG.gadget },
+  { icon: "📱", title: "Mobiles", text: "Latest smartphones, har budget mein", img: IMG.phone, desc: "Browse the latest smartphones at ElectroHub Narwana. Samsung Galaxy S26 series and other trusted brands with brand warranty, GST bill and no-cost EMI options." },
+  { icon: "📺", title: "Smart TVs", text: "4K LED / Smart TV, best price", img: IMG.tv, desc: "Smart TVs for every room and budget. Samsung 43 inch Smart TV with 4K picture, built-in apps and easy remote. Free wall installation in Narwana and nearby areas." },
+  { icon: "💻", title: "Laptops", text: "Study, office aur gaming laptops", img: IMG.laptop, desc: "Laptops for study, office and everyday use. Samsung Galaxy Book offers slim design, long battery and reliable performance for students and working professionals." },
+  { icon: "🎧", title: "Audio", text: "Headphones, speakers, soundbars", img: IMG.audio, desc: "Audio gear for music, calls and home entertainment. Samsung headphones and audio accessories with clear sound and comfortable fit, available at Narwana." },
+  { icon: "⌚", title: "Smart Watches", text: "Fitness aur style, dono ek mein", img: IMG.watch, desc: "Smart watches that track fitness, heart rate and notifications while adding style to your wrist. Compatible with Android and iPhone." },
+  { icon: "🔌", title: "Accessories", text: "Chargers, cables, covers, power banks", img: IMG.gadget, desc: "Genuine chargers, cables, covers, power banks and other mobile accessories. Everything you need to keep your devices powered and protected." },
 ];
 
 export const BRANDS = ["Samsung", "LG", "Sony", "boAt", "Apple", "Realme"];

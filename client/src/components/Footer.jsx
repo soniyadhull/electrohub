@@ -16,7 +16,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4>Quick Links</h4>
+          <h2>Quick Links</h2>
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/gallery">Gallery</Link>
@@ -27,7 +27,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4>Contact</h4>
+          <h2>Contact</h2>
           <p className="muted">📍 {SHOP.address}</p>
           <p className="muted">🕘 {SHOP.hours}</p>
           <a href={`tel:${SHOP.phone}`}>📞 {SHOP.phone}</a>

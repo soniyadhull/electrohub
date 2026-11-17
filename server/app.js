@@ -292,6 +292,49 @@ export function createApp({
 
   const dist = path.join(__dirname, "../client/dist");
   app.use(express.static(dist));
+  app.get("/robots.txt", async (_req, res, next) => {
+    try {
+      const file = path.join(__dirname, "robots.txt");
+      await fs.access(file);
+      res.setHeader("Content-Type", "text/plain");
+      res.sendFile(file);
+    } catch {
+      next();
+    }
+  });
+  app.get("/sitemap.xml", async (_req, res, next) => {
+    try {
+      const base = (process.env.SITE_URL || "https://electrohub-wine.vercel.app").replace(/\/+$/, "");
+      const staticRoutes = [
+        { url: "/", changefreq: "weekly", priority: "1.0" },
+        { url: "/about", changefreq: "monthly", priority: "0.8" },
+        { url: "/gallery", changefreq: "monthly", priority: "0.7" },
+        { url: "/products", changefreq: "weekly", priority: "0.9" },
+        { url: "/contact", changefreq: "monthly", priority: "0.8" },
+        { url: "/track-order", changefreq: "monthly", priority: "0.5" },
+        { url: "/privacy", changefreq: "yearly", priority: "0.3" },
+        { url: "/terms", changefreq: "yearly", priority: "0.3" },
+      ];
+      // Dynamically include public, indexable product and category pages.
+      // Excludes private routes (/checkout, /admin/orders) and duplicates.
+      const productRoutes = PRODUCTS.map((p) => ({
+        url: `/products/${p.id}`,
+        changefreq: "monthly",
+        priority: "0.8",
+      }));
+      const categoryRoutes = CATEGORIES.map((c) => ({
+        url: `/category/${String(c.title).toLowerCase().replace(/\s+/g, "-")}`,
+        changefreq: "monthly",
+        priority: "0.7",
+      }));
+      const routes = [...staticRoutes, ...productRoutes, ...categoryRoutes];
+      const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${routes.map((r) => `  <url>\n    <loc>${base}${r.url}</loc>\n    <changefreq>${r.changefreq}</changefreq>\n    <priority>${r.priority}</priority>\n  </url>\n`).join("")}</urlset>`;
+      res.setHeader("Content-Type", "application/xml");
+      res.send(xml);
+    } catch (error) {
+      next(error);
+    }
+  });
   app.get("*", (_req, res, next) => {
     fs.access(path.join(dist, "index.html")).then(
       () => res.sendFile(path.join(dist, "index.html")),

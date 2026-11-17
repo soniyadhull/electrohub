@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Reveal from "../components/Reveal.jsx";
 import Img from "../components/Img.jsx";
@@ -34,13 +35,13 @@ export default function About() {
         <div className="container two">
           <Reveal x={-60} y={0}>
             <motion.div animate={{ y: [0, -12, 0] }} transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}>
-              <Img className="about-img" src={IMG.store} alt="ElectroHub store" />
+              <Img className="about-img" src={IMG.store} alt="ElectroHub electronics shop in Narwana, Jind – original products with brand warranty" />
             </motion.div>
           </Reveal>
           <Reveal x={60} y={0}>
             <span className="eyebrow">Hamari Kahani</span>
             <h2 className="title left">
-              Hum <span className="grad">kaun hain?</span>
+              Hum <span className="grad">kaun hain?</span> – Electronics Shop in Narwana, Jind
             </h2>
             <p className="text">
               ElectroHub, Narwana (Jind, Haryana) ki ek bharosemand electronics shop hai. 2016 se chal rahi
@@ -50,6 +51,7 @@ export default function About() {
             <p className="text">
               Mobile aur TV se lekar laptop, audio aur accessories tak, sab kuch ek hi chhat ke neeche milta
               hai. Har product par GST bill, brand warranty aur genuine accessories — no fake, no compromise.
+              Samsung, LG, Sony, boAt aur Realme jaise trusted brands ki original products available hain.
             </p>
             <p className="text">
               Khareedne ke baad bhi hum aapke saath hain: free installation, repair, exchange offer, no-cost
@@ -58,7 +60,7 @@ export default function About() {
             </p>
             <p className="text">
               Aaj tak 10,000+ customers ka bharosa jeeta hai humne. Aapka bharosa hi hamari sabse badi
-              kamayi hai.
+              kamayi hai. Narwana aur Jind ke aas-paas ke area mein home delivery available hai.
             </p>
             <ul className="ticks">
               {points.map((p) => (
@@ -68,6 +70,10 @@ export default function About() {
                 </li>
               ))}
             </ul>
+            <div style={{ marginTop: 24, display: "flex", flexWrap: "wrap", gap: 12 }}>
+              <Link className="btn btn-amber" to="/products">View Products & Prices →</Link>
+              <Link className="btn btn-ghost" to="/contact">Contact for Repair & EMI →</Link>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -80,6 +86,7 @@ export default function About() {
               <h2 className="title">
                 Mission · Vision · <span className="grad">Values</span>
               </h2>
+              <p className="sub">Hamari soch — original products, sahi daam aur customer ki full santushti</p>
             </div>
           </Reveal>
           <div className="grid3">

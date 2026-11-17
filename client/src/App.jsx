@@ -9,6 +9,8 @@ import About from "./pages/About.jsx";
 import Gallery from "./pages/Gallery.jsx";
 import Contact from "./pages/Contact.jsx";
 import Products from "./pages/Products.jsx";
+import ProductDetail from "./pages/ProductDetail.jsx";
+import Category from "./pages/Category.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import TrackOrder from "./pages/TrackOrder.jsx";
 import Privacy from "./pages/Privacy.jsx";
@@ -36,6 +38,8 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/products/:id" element={<ProductDetail />} />
+          <Route path="/category/:slug" element={<Category />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/track-order" element={<TrackOrder />} />
