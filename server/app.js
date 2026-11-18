@@ -98,6 +98,10 @@ export function createApp({
     });
   });
 
+  app.get("/api/health", (_req, res) => {
+    res.status(200).json({ status: "ok", service: "ElectroHub" });
+  });
+
   app.post("/api/contact", async (req, res, next) => {
     const { name, phone, message } = req.body || {};
     if (!clean(name) || !/^[6-9]\d{9}$/.test(clean(phone)) || !clean(message)) {
