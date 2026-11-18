@@ -16,7 +16,7 @@ export const IMG = {
   hero: u("hero"),
   store: u("store"),
   phone: u("phone"),
-  tv: "/images/tv-product.svg",
+  tv: u("tv"),
   laptop: u("laptop"),
   audio: u("audio"),
   watch: u("watch"),

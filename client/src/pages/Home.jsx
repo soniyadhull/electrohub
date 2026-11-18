@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import Reveal from "../components/Reveal.jsx";
 import Counter from "../components/Counter.jsx";
 import Img from "../components/Img.jsx";
@@ -11,7 +11,15 @@ const formatPrice = (price) => new Intl.NumberFormat("en-IN", {
   maximumFractionDigits: 0,
 }).format(price);
 
+const heroAnimations = {
+  phone: { y: [0, -12, 0], rotate: [0, 1, 0] },
+  audio: { y: [0, 10, 0], rotate: [0, -2, 0] },
+  tv: { y: [0, -9, 0], rotate: [0, 1, 0] },
+};
+const heroDurations = { phone: 4.5, audio: 5, tv: 5.5 };
+
 export default function Home() {
+  const reduced = useReducedMotion();
   return (
     <>
       <section className="hero">
@@ -62,24 +70,24 @@ export default function Home() {
           >
             <motion.div
               className="hero-product hero-product-phone"
-              animate={{ y: [0, -12, 0], rotate: [0, 1, 0] }}
-              transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
+              animate={reduced ? undefined : heroAnimations.phone}
+              transition={reduced ? undefined : { repeat: Infinity, duration: heroDurations.phone, ease: "easeInOut" }}
             >
               <Img src={IMG.phone} alt="Samsung Galaxy S26 smartphone – latest mobile price in Narwana" />
               <span>Smartphones</span>
             </motion.div>
             <motion.div
               className="hero-product hero-product-audio"
-              animate={{ y: [0, 10, 0], rotate: [0, -2, 0] }}
-              transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+              animate={reduced ? undefined : heroAnimations.audio}
+              transition={reduced ? undefined : { repeat: Infinity, duration: heroDurations.audio, ease: "easeInOut" }}
             >
               <Img src={IMG.audio} alt="Samsung Galaxy Buds FE and audio headphones – best price Narwana" />
               <span>Headphones</span>
             </motion.div>
             <motion.div
               className="hero-product hero-product-tv"
-              animate={{ y: [0, -9, 0], rotate: [0, 1, 0] }}
-              transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut" }}
+              animate={reduced ? undefined : heroAnimations.tv}
+              transition={reduced ? undefined : { repeat: Infinity, duration: heroDurations.tv, ease: "easeInOut" }}
             >
               <Img className="hero-tv-image" src={IMG.tv} alt="Samsung Smart TV 43 inch – best price in Narwana" />
               <span>Smart TVs</span>
